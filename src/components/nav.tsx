@@ -6,7 +6,7 @@ import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 export default function Nav() {
     const pathname = usePathname()
-    if (pathname === '/login') return <></>
+    // if (pathname === '/login') return <></>
     return <>
         < nav className="p-2 flex items-center justify-between w-full h-14 bg-gray-100 dark:bg-gray-800 text-base font-bold text-gray-500 dark:text-gray-300" >
             <Image placeholder='empty' src={logo} alt="logo" width={50} height={50} style={{ cursor: 'pointer' }} />

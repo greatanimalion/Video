@@ -10,5 +10,5 @@ console.log('Request:',new URL('/login', request.url));
 }
 
 export const config = {
-  matcher: '/api/aaa',
+  matcher:['/(^(?!/login).*)']
 }
