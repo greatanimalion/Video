@@ -7,4 +7,5 @@ export type User = {
     registerTime?: string,
     type?: string,
     announce?: string,
+    avator?: string,
 }
