@@ -19,7 +19,7 @@
     width: 400px;
     height: 364px;
     backdrop-filter: blur(5px);
-    background-image: linear-gradient(to right, #171717 0%, black 100%);
+    background-image: linear-gradient(to right, #0f0f0f 0%, rgb(31, 31, 31) 50%,#131212 100%);
     border-radius: 10px;
     box-shadow: 0 15px 25px 0 rgba(0, 0, 0, 0.6);
     padding: 40px;

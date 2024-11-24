@@ -1,21 +1,49 @@
 "use client"
 import Image from 'next/image'
 import logo from '@/public/logo.png'
-
+import { Avatar, Tooltip } from "@nextui-org/react";
+import { Navbar, NavbarBrand, NavbarContent, NavbarItem, Link, Button } from "@nextui-org/react";
 import { usePathname } from 'next/navigation'
-import Link from 'next/link'
-export default function Nav() {
-    const pathname = usePathname()
-    // if (pathname === '/login') return <></>
-    return <>
-        < nav className="p-2 flex items-center justify-between w-full h-14 bg-gray-100 dark:bg-gray-800 text-base font-bold text-gray-500 dark:text-gray-300" >
-            <Image placeholder='empty' src={logo} alt="logo" width={50} height={50} style={{ cursor: 'pointer' }} />
-            <ul className="flex items-center justify-between w-3/4" >
-                <li className="cursor-pointer hover:text-gray-50 duration-300">首页</li>
-                <li className="cursor-pointer hover:text-gray-50 duration-300">分类</li>
-                <li className="cursor-pointer hover:text-gray-50 duration-300">咨询</li>
-                <li className="cursor-pointer hover:text-gray-50 duration-300"><Link href="/login">登录</Link></li>
-            </ul>
-        </nav >
-    </>
-}
+import { AiFillEdit } from "react-icons/ai";
+import { CiSaveUp2 } from "react-icons/ci";
+import { memo } from 'react'
+export default memo(function Nav() {
+  const pathname = usePathname()
+  if (pathname === '/login') return <></>
+  return <>
+    <Navbar className='fixed top-0 z-50 w-full shadow-md shadow-gray-900 '>
+      <NavbarBrand>
+        <Image placeholder='empty' src={logo} alt="logo" width={50} height={50} style={{ cursor: 'pointer' }} />
+      </NavbarBrand>
+      <NavbarContent className="hidden sm:flex gap-4" justify="center">
+        <NavbarItem isActive={pathname === '/'? true : false}>
+          <Link href="/" color={pathname === '/'?'primary':'foreground'}>
+            首页
+          </Link>
+        </NavbarItem>
+        <NavbarItem isActive={pathname === '/classify'? true : false} >
+          <Link href="/classify" color={pathname === '/classify'?'primary':'foreground'}  >
+            分类
+          </Link>
+        </NavbarItem>
+        <NavbarItem isActive={pathname === '/more'? true : false}>
+          <Link  href="#" color={pathname === '/more'?'primary':'foreground'}>
+            更多
+          </Link>
+        </NavbarItem>
+      </NavbarContent>
+      <NavbarContent justify="end">
+      {pathname === '/createOpus'? <Button><CiSaveUp2 />发表作品</Button> : <Link href='/createOpus'><AiFillEdit />发表作品</Link>}
+        <Tooltip placement="bottom"
+          content={
+            <div className="px-1 py-2 flex gap-2 items-center flex-col">
+              <Button color="primary" variant="light" onClick={() => {location.href='/person'}}>个人中心</Button>
+              <Button color="primary" variant="light">退出登录</Button>
+            </div>
+          }>
+          <Avatar src="https://tse3-mm.cn.bing.net/th/id/OIP-C.NcBmhZg6-PBSrbbo2SVssgAAAA?rs=1&pid=ImgDetMain" />
+        </Tooltip>
+      </NavbarContent>
+    </Navbar>
+  </>
+})

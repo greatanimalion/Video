@@ -1,6 +1,6 @@
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -26,7 +26,18 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
+::-webkit-scrollbar-thumb {
+  width: 10px;
+  background: #888;
+  border-radius: 10px;
+}
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #272727;
+  border-radius: 10px;
+}
 * {
   box-sizing: border-box;
   padding: 0;
@@ -48,9 +59,15 @@ input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
-    -webkit-transition-delay: 99999s;
+  -webkit-transition-delay: 99999s;
 
-    -webkit-transition:
-        color 99999s ease-out,
-        background-color 99999s ease-out;
+  -webkit-transition:
+    color 99999s ease-out,
+    background-color 99999s ease-out;
+}
+
+/*富文本编辑器的样式 */
+html.dark {
+  --w-e-textarea-bg-color: #333;
+  --w-e-textarea-color: #fff;
 }
