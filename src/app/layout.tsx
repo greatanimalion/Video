@@ -14,7 +14,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-      <body style={{ maxWidth: "1400px", minWidth: '1100px', margin: "10px auto", paddingTop: "70px" }}>
+      <body style={{ maxWidth: "1400px", minWidth: '900px', margin: "10px auto", paddingTop: "70px" }}>
         <Providers>
           <Nav />
           {children}

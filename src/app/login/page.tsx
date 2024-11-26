@@ -2,7 +2,7 @@
 import useCanvas from "@/lib/canvas"
 import { useEffect, useRef, useState } from "react";
 import styles from './index.module.css'
-import { post } from "@/utils/axios";
+// import { post } from "@/utils/axios";
 import Message from "@/utils/msg";
 export default function Page() {
     const canvasRef = useRef<HTMLCanvasElement>(null);

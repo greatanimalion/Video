@@ -5,7 +5,7 @@ import { Avatar, Tooltip } from "@nextui-org/react";
 import { Navbar, NavbarBrand, NavbarContent, NavbarItem, Link, Button } from "@nextui-org/react";
 import { usePathname } from 'next/navigation'
 import { AiFillEdit } from "react-icons/ai";
-import { CiSaveUp2 } from "react-icons/ci";
+
 import { memo } from 'react'
 export default memo(function Nav() {
   const pathname = usePathname()
@@ -33,7 +33,7 @@ export default memo(function Nav() {
         </NavbarItem>
       </NavbarContent>
       <NavbarContent justify="end">
-      {pathname === '/createOpus'? <Button><CiSaveUp2 />发表作品</Button> : <Link href='/createOpus'><AiFillEdit />发表作品</Link>}
+      {pathname.startsWith('/createOpus')?  <Button color="primary" variant="light" onClick={()=>window.history.back()}>返回</Button> : <Link href='/createOpus'><AiFillEdit />发表作品</Link>}
         <Tooltip placement="bottom"
           content={
             <div className="px-1 py-2 flex gap-2 items-center flex-col">

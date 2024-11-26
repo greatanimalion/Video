@@ -1,7 +1,7 @@
-import { NextResponse, NextRequest } from 'next/server'
+// import {  NextRequest } from 'next/server'
 
 //仅支持Edge runtime
-export function middleware(request: NextRequest) {
+export function middleware() {
   // const { pathname } = request.nextUrl;
   // if (whiteList.includes(pathname)) {
   //   return NextResponse.next();
@@ -11,5 +11,5 @@ export function middleware(request: NextRequest) {
 }
 
 //路由白名单
-const whiteList = ['/login', '/api/login'];
+// const whiteList = ['/login', '/api/login'];
 

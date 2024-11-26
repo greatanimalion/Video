@@ -52,8 +52,8 @@ function produceDiv(div: HTMLElement,type: MessageType, msg: string) {
 }
 
 export default function Message(type: MessageType, msg: string) {
-    let container = initContainer();
-    let div = document.createElement('div');
+    const container = initContainer();
+    const div = document.createElement('div');
     produceDiv(div, type, msg);
     container.appendChild(div);
     getComputedStyle(div).transform;

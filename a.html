@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        background-color: black;
+    }
+
+    .text {
+        fill: none;
+        stroke-width: 5;
+        stroke-dasharray: 0 300;
+        stroke-dashoffset: 0;
+    }
+
+    .text:nth-child(3n + 1) {
+        stroke: #ffffff;
+        animation: stroke 3s ease-in-out forwards;
+
+    }
+
+    .text:nth-child(3n + 2) {
+        stroke: #e6e6e6;
+        animation: stroke1 3s ease-in-out forwards;
+
+    }
+
+    .text:nth-child(3n + 3) {
+        stroke: #ffffff;
+        animation: stroke2 3s ease-in-out forwards;
+
+    }
+    @keyframes stroke {
+        100% {
+            stroke-dashoffset: 1000;
+            stroke-dasharray: 80 0;
+        }
+    }
+    @keyframes stroke1 {
+        100% {
+            stroke-dashoffset: 1080;
+            stroke-dasharray: 80 0;
+        }
+    }
+    @keyframes stroke2 {
+        100% {
+            stroke-dashoffset: 1160;
+            stroke-dasharray: 80 0;
+        }
+    }
+
+
+    body {
+        background: #212121;
+        background-size: .2em 100%;
+        font: 14.5em/1 Open Sans, Impact;
+        text-transform: uppercase;
+        margin: 0;
+    }
+
+    svg {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
+</style>
+
+<body>
+    <svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4009" width="256" height="256">
+        <symbol id="s-text">
+            <path class="text"
+                d="M874.666667 128H277.333333a21.333333 21.333333 0 0 0-21.333333 21.333333v106.666667H149.333333a21.333333 21.333333 0 0 0-21.333333 21.333333v533.333334a85.44 85.44 0 0 0 85.333333 85.333333h576a106.773333 106.773333 0 0 0 106.666667-106.666667V149.333333a21.333333 21.333333 0 0 0-21.333333-21.333333zM170.666667 810.666667V298.666667h85.333333v512a42.666667 42.666667 0 0 1-85.333333 0z m682.666666-21.333334a64.064 64.064 0 0 1-64 64H286.805333A84.352 84.352 0 0 0 298.666667 810.666667V170.666667h554.666666z"
+                fill="#ffffff" p-id="4010"></path>
+            <path class="text"
+                d="M405.333333 298.666667h341.333334a21.333333 21.333333 0 0 0 0-42.666667H405.333333a21.333333 21.333333 0 0 0 0 42.666667zM405.333333 426.666667h341.333334a21.333333 21.333333 0 0 0 0-42.666667H405.333333a21.333333 21.333333 0 0 0 0 42.666667zM405.333333 554.666667h341.333334a21.333333 21.333333 0 0 0 0-42.666667H405.333333a21.333333 21.333333 0 0 0 0 42.666667zM405.333333 682.666667h341.333334a21.333333 21.333333 0 0 0 0-42.666667H405.333333a21.333333 21.333333 0 0 0 0 42.666667z"
+                fill="#ffffff" p-id="4011"></path>
+        </symbol>
+        <use xlink:href="#s-text" class="text"></use>
+        <use xlink:href="#s-text" class="text"></use>
+        <use xlink:href="#s-text" class="text"></use>
+    </svg>
+ 
+</body>
+
+</html>

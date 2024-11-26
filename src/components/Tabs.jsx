@@ -11,7 +11,7 @@ export default function PersonPage() {
         <div style={{ margin: "10px",display:"flex",gap:"10px" }}>
             <Card className={style.card}>
                 <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
-                    <p className="text-tiny uppercase font-bold">作者:李彬</p>
+                    <p onClick={()=>{location.href="/opus"}} className="text-tiny uppercase font-bold">作者:李彬</p>
                     <small className="text-default-500">时间:2024-11-23</small>
                     <h4 className="font-bold text-large">标题:安魂谣</h4>
                 </CardHeader>
