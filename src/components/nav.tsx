@@ -33,11 +33,13 @@ export default memo(function Nav() {
         </NavbarItem>
       </NavbarContent>
       <NavbarContent justify="end">
-      {pathname.startsWith('/createOpus')?  <Button color="primary" variant="light" onClick={()=>window.history.back()}>返回</Button> : <Link href='/createOpus'><AiFillEdit />发表作品</Link>}
+      {pathname.startsWith('/createOpus')? 
+       <Button color="primary" variant="light" onClick={()=>window.history.back()}>返回</Button> :
+       <Link href='/createOpus'><AiFillEdit />发表作品</Link>}
         <Tooltip placement="bottom"
           content={
             <div className="px-1 py-2 flex gap-2 items-center flex-col">
-              <Button color="primary" variant="light" onClick={() => {location.href='/person'}}>个人中心</Button>
+              <Button color="primary" variant="light" onClick={() => {location.href='/person/myInfor'}}>个人中心</Button>
               <Button color="primary" variant="light">退出登录</Button>
             </div>
           }>

@@ -1,9 +1,11 @@
 "use client"
+import { useRouter } from 'next/navigation';
 import style from './index.module.css'
 export default function () {
+  const router = useRouter()
   return <>
     <div className="flex justify-around items-center mt-24">
-      <div className="w-96 cursor-pointer bg-black h-96  rounded-lg flex flex-col justify-center items-center hover:bg-zinc-800 transition-background">
+      <div className="w-96 cursor-pointer bg-black h-96  rounded-lg flex flex-col justify-center items-center hover:bg-zinc-800 transition-background" onClick={()=>router.push('/createOpus/createVideo')}>
         <h1 className="text-white text-3xl font-bold">创建视频</h1>
         <svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4486" width="256" height="256">
           <symbol id="video">
@@ -14,7 +16,7 @@ export default function () {
           <use xlinkHref="#video" className={style.text}></use>
         </svg>
       </div>
-      <div className="w-96 cursor-pointer bg-black h-96  rounded-lg flex flex-col justify-center items-center hover:bg-zinc-800 transition-background" onClick={() => { window.location.href = "/createOpus/createArticle" }}>
+      <div className="w-96 cursor-pointer bg-black h-96  rounded-lg flex flex-col justify-center items-center hover:bg-zinc-800 transition-background" onClick={() =>router.push("/createOpus/createArticle")}>
         <h1 className="text-white text-3xl font-bold">创建文章</h1>
         <svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4009" width="256" height="256">
           <symbol id="artile">

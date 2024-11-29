@@ -25,10 +25,10 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             </div>
         </div>
         {children}
-        <div  ref={Comment} className="transition-all  fixed bottom-0 right-0 translate-x-96 h-full w-96 bg-stone-800 pt-16">
+        <div  ref={Comment} className="transition-all  fixed bottom-0 right-0 translate-x-96 h-full w-96 bg-stone-900 pt-16">
             <h1 className="p-3">评论区<IoMdClose className=" hover:rotate-90 transition-all hover:text-gray-50 text-gray-400 float-right cursor-pointer text-xl" onClick={showComent} /></h1>
             <div className="p-3 pt-0">hhh</div>
-            <div className="flex justify-around items-center absolute bottom-2 w-full  bg-stone-800 p-3">
+            <div className="flex justify-around items-center absolute bottom-1 w-full  bg-stone-800 p-2">
                 <div style={{width:'75%'}}><Input style={{fontSize:'20px'}}  variant="underlined" placeholder="输入评论"/></div>
                 <Button style={{width:'25%'}} radius="none">发送</Button>
                 </div>
