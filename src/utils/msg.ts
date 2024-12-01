@@ -1,4 +1,4 @@
-import { SuccessIcon, ErrorIcon, InfoIcon, WarningIcon } from '@/const/Icon';
+import { SuccessIcon, ErrorIcon, InfoIcon, WarningIcon } from '@/const/icon/Icon';
 type MessageType = "error" | "info" | "success" | "warning";
 function initContainer() {
     let container = document.querySelector<HTMLDivElement>('#message-container');
