@@ -1,7 +1,7 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
-:root {
+/* :root {
   --background: #ffffff;
   --foreground: #171717;
 }
@@ -11,6 +11,20 @@
     --background: #000000;
     --foreground: #ededed;
   }
+} */
+html[class*="dark"]{
+  --background: #000000;
+  --foreground: #ededed;
+}
+html[class*="light"]{
+  --background: #ffffff;
+  --foreground: #171717;
+}
+.bg{
+  background-color: var(--background);
+}
+.color{
+  color: var(--foreground);
 }
 
 html,
@@ -38,7 +52,6 @@ body {
   border-radius: 10px;
 }
 * {
- 
   padding: 0;
   margin: 0;
 }
@@ -59,7 +72,6 @@ input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
   -webkit-transition-delay: 99999s;
-
   -webkit-transition:
     color 99999s ease-out,
     background-color 99999s ease-out;

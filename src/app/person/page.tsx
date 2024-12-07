@@ -2,9 +2,7 @@
 
 import { useEffect } from "react";
 import style from './index.module.css'
-import {commonColors, semanticColors} from "@nextui-org/theme";
 export default function App() {
-  console.log(semanticColors.dark); 
   useEffect(() => {
     window.location.href = "/person/myInfor";
   }, [])

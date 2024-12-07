@@ -1,7 +1,7 @@
 "use client"
 import { Card, CardHeader, CardBody, Divider, Image } from "@nextui-org/react";
-
 export default function myfavorPage() {
+  
   return <div className="flex justify-center w-full">
     <Card className="w-3/4">
       <CardHeader className="flex gap-3">
@@ -39,7 +39,6 @@ export default function myfavorPage() {
           我听到了嫁祸的回响
         </p>
       </CardBody>
-      <Divider />
     </Card>
   </div>
 }

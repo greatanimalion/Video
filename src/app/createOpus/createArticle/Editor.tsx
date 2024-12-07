@@ -105,7 +105,7 @@ export default function () {
                         <ModalHeader className="flex flex-col gap-1">请添加封面图</ModalHeader>
                         <ModalBody>
                             <div className="flex justify-center items-center cursor-pointer">
-                                <FaImage style={{ fontSize: '150px', color: 'white' }} />
+                                <FaImage style={{ fontSize: '150px' }} />
                             </div>
                         </ModalBody>
                         <ModalFooter>

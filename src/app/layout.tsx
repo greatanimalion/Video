@@ -12,7 +12,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en" className="light">
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       <body style={{ maxWidth: "1400px", minWidth: '900px', margin: "10px auto", paddingTop: "70px" }}>
         <Providers>

@@ -44,7 +44,7 @@ export default function PersonLayout({children}:{ children: React.ReactNode }) {
               修改信息
             </ListboxItem>
           </Listbox>
-          <div className="w-full">
+          <div className="w-full pb-4">
           {children}
           </div>
         </div>

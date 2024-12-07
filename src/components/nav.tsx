@@ -1,24 +1,18 @@
 "use client"
 import Image from 'next/image'
 import logo from '@/public/logo.png'
-import { Avatar, Switch, Tooltip } from "@nextui-org/react";
+import { Avatar, Skeleton, Tooltip } from "@nextui-org/react";
 import { Navbar, NavbarBrand, NavbarContent, NavbarItem, Link, Button } from "@nextui-org/react";
 import { usePathname } from 'next/navigation'
 import { AiFillEdit } from "react-icons/ai";
-import {MoonIcon} from "../const/icon/MoonIcon";
-import {SunIcon} from "../const/icon/SunIcon";
-import useTheme from '@/app/hooks/useTheme';
-import { memo, useCallback } from 'react'
+import { memo, Suspense } from 'react'
+import dynamic from 'next/dynamic';
 export default memo(function Nav() {
   const pathname = usePathname()
-  const [theme, setTheme]= useTheme()
-  const handleThemeChange = useCallback(function (event:any) {
-    const checked = event.target.checked? 'light' : 'dark'
-    setTheme(checked)
-  },[])
+  const Switch = dynamic(() => import('./client/Switch'), { ssr: false })
   if (pathname === '/login') return <></>
   return <>
-    <Navbar className='fixed top-0 z-50 w-full shadow-md shadow-gray-900 '>
+    <Navbar className='fixed top-0 z-50 w-full shadow-md ' >
       <NavbarBrand>
         <Image placeholder='empty' src={logo} alt="logo" width={50} height={50} style={{ cursor: 'pointer' }} />
       </NavbarBrand>
@@ -55,16 +49,9 @@ export default memo(function Nav() {
 
       </NavbarContent>
       <NavbarItem isActive={pathname === '/more' ? true : false}>
-        <Switch 
-          isSelected={theme==='light'?true:false}
-          onChange={handleThemeChange}
-          defaultSelected
-          size="lg"
-          color="primary"
-          startContent={<SunIcon />}
-          endContent={<MoonIcon />}
-        >
-        </Switch>
+        <Suspense fallback={<Skeleton className="h-3 w-5 rounded-lg" />}>
+          <Switch />
+        </Suspense>
       </NavbarItem>
     </Navbar>
   </>
